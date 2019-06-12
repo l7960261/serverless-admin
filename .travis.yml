@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - "10"
+branches:
+  only:
+  - master
+before_install:
+  - npm install -g firebase-tools
+install:
+  - npm install
+before_script:
+  - npm run prebuilt "$FIREBASE_CONFIG"
+script:
+  - npm run build
+after_script:
+  - firebase deploy --token "$FIREBASE_TOKEN"
+notifications:
+  email:
+    on_failure: change
+    on_success: change

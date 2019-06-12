@@ -1,0 +1,36 @@
+@import "../../styles/themes";
+@import "~@nebular/theme/styles/global/breakpoints";
+
+@include nb-install-component() {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .logo-containter {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    width: auto;
+
+    .navigation {
+      @include nb-ltr(padding-right, nb-theme(header-padding));
+      @include nb-rtl(padding-left, nb-theme(header-padding));
+      font-size: 2.5rem;
+      text-decoration: none;
+
+      i {
+        display: block;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(is) {
+    .clock {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<nb-card>
+  <nb-card-header>
+    <span>延長序號請完成下方表單</span>
+  </nb-card-header>
+  <nb-card-body>
+    <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>姓名</label>
+        <small class="form-text text-muted">{{name}}</small>
+      </div>
+      <div class="form-group">
+        <label>過期時間</label>
+        <small class="form-text text-muted">{{expiredAt}}</small>
+      </div>
+      <!-- 有效時間 -->
+      <div class="form-group">
+        <label>延長有效時間</label>
+        <select class="form-control" formControlName="period">
+          <option *ngFor="let value of options" [value]="value"> {{value}}</option>
+        </select>
+        <div class="form-check">
+          <input class="form-check-input" id="vertical-radio1" type="radio" value="month" formControlName="unit">
+          <label class="form-check-label" for="vertical-radio1">
+            月
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" id="vertical-radio2" type="radio" value="day" formControlName="unit">
+          <label class="form-check-label" for="vertical-radio2">
+            天
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">送出</button>
+    </form>
+  </nb-card-body>
+</nb-card>

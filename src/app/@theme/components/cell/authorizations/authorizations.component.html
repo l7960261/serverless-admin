@@ -1,0 +1,6 @@
+<form [formGroup]="form" style="padding-top: 0">
+  <span *ngFor="let auth of form.controls.auths['controls']; let i=index">
+    <input type="checkbox" [formControl]="auth">
+    {{authorizations[i].text}}
+  </span>
+</form>

@@ -1,0 +1,63 @@
+<nb-card>
+  <nb-card-header>
+    <span *ngIf="createMode">新增序號請完成下方表單</span>
+    <span *ngIf="!createMode">修改序號請完成下方表單</span>
+  </nb-card-header>
+  <nb-card-body>
+
+    <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group" formGroupName="custom">
+        <label for="full-name">姓名</label>
+        <input type="text" class="form-control" id="full-name" formControlName="name" placeholder="Enter name">
+        <small class="form-text text-muted">必填</small>
+      </div>
+      <!-- 動態欄位 -->
+      <ng-container formArrayName="emails">
+        <div class="form-group" *ngFor="let email of emails.controls; let i=index">
+          <label>Email</label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Enter email" [formControlName]="i">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" (click)="removeEmail(i)">Remove</button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <div class="form-group">
+        <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addEmail()">Add Email</button>
+      </div>
+      <!-- 權限 -->
+      <ng-container formArrayName="authorizations">
+        <div class="form-group">
+          <label>權限</label>
+          <div class="form-check" *ngFor="let authorization of authorizations.controls; let i=index">
+            <input class="form-check-input" type="checkbox" [formControlName]="i">
+            <label class="form-check-label">{{auths[i].text}}</label>
+          </div>
+        </div>
+      </ng-container>
+      <!-- 有效時間 -->
+      <div class="form-group" *ngIf="createMode">
+        <label>有效時間</label>
+        <select class="form-control" formControlName="period">
+          <option *ngFor="let value of options" [value]="value"> {{value}}</option>
+        </select>
+        <div class="form-check">
+          <input class="form-check-input" id="vertical-radio1" type="radio" value="month" formControlName="unit">
+          <label class="form-check-label" for="vertical-radio1">
+            月
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" id="vertical-radio1" type="radio" value="day" formControlName="unit">
+          <label class="form-check-label" for="vertical-radio1">
+            天
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">送出</button>
+    </form>
+
+  </nb-card-body>
+</nb-card>
