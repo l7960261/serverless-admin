@@ -28,9 +28,6 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",
-              "node_modules/ionicons/dist/scss/ionicons.scss",
-              "node_modules/ag-grid-community/dist/styles/ag-grid.css",
-              "node_modules/ag-grid-community/dist/styles/ag-theme-balham.css",
               "src/app/@theme/styles/styles.scss"
             ],
             "scripts": []
@@ -88,9 +85,6 @@
             "karmaConfig": "karma.conf.js",
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",
-              "node_modules/ionicons/dist/scss/ionicons.scss",
-              "node_modules/ag-grid-community/dist/styles/ag-grid.css",
-              "node_modules/ag-grid-community/dist/styles/ag-theme-balham.css",
               "src/app/@theme/styles/styles.scss"
             ],
             "scripts": [],
