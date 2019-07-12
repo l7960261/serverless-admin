@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AgGridModule } from 'ag-grid-angular';
 import { ClipboardModule } from 'ngx-clipboard';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import {
   NbThemeModule,
@@ -54,6 +55,7 @@ const NB_MODULES = [
   NbSelectModule,
   NbBadgeModule,
   NbCardModule,
+  Ng2SmartTableModule,
 ];
 
 const THIRD_PARTY_MODULES = [
