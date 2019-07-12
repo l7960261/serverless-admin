@@ -4,7 +4,8 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { AuthModule } from '../auth/auth.module';
-import { environment } from 'src/environments/environment';
+import { APP_THEME_KEY } from './core.config';
+import { environment } from '../../environments/environment';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { ClockSyncService, LicenseService } from './services';
 
@@ -42,6 +43,7 @@ export class CoreModule {
       providers: [
         ...APP_CORE_PROVIDERS,
         ...FS_CORE_PROVIDERS,
+        { provide: APP_THEME_KEY, useValue: '_epa_theme' },
       ],
     };
   }

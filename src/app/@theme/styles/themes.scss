@@ -1,10 +1,39 @@
 @import "~@nebular/theme/styles/theming";
 @import "~@nebular/theme/styles/themes";
 
-$nb-enabled-themes: (default, cosmic, corporate);
-
-$nb-themes: nb-register-theme((), default, default);
-
-$nb-themes: nb-register-theme((), cosmic, cosmic);
-
-$nb-themes: nb-register-theme((), corporate, corporate);
+$nb-themes: nb-register-theme(
+  (
+    smart-table-bg-even: background-basic-color-2,
+    smart-table-bg-active: background-basic-color-3,
+    smart-table-paging-hover: transparent
+  ),
+  default,
+  default
+);
+$nb-themes: nb-register-theme(
+  (
+    smart-table-bg-even: background-basic-color-2,
+    smart-table-bg-active: background-basic-color-3,
+    smart-table-paging-hover: transparent
+  ),
+  dark,
+  dark
+);
+$nb-themes: nb-register-theme(
+  (
+    smart-table-bg-even: background-basic-color-2,
+    smart-table-bg-active: background-basic-color-3,
+    smart-table-paging-hover: transparent
+  ),
+  cosmic,
+  cosmic
+);
+$nb-themes: nb-register-theme(
+  (
+    smart-table-bg-even: background-basic-color-2,
+    smart-table-bg-active: background-basic-color-3,
+    smart-table-paging-hover: transparent
+  ),
+  corporate,
+  corporate
+);

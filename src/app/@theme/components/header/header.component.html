@@ -1,10 +1,13 @@
 <div class="header-container">
   <div class="logo-containter">
-    <a (click)="toggleSidebar()" href="#" class="navigation">
-      <i class="ion ion-md-menu"></i>
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu"></nb-icon>
     </a>
     <div class="logo" (click)="goToHome()"><span>電商印單小幫手</span></div>
   </div>
+  <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">
+    <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>
+  </nb-select>
 </div>
 
 <div class="header-container">

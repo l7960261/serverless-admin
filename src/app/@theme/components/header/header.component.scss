@@ -1,5 +1,5 @@
-@import "../../styles/themes";
 @import "~@nebular/theme/styles/global/breakpoints";
+@import "../../styles/themes";
 
 @include nb-install-component() {
   display: flex;
@@ -16,20 +16,38 @@
     align-items: center;
     width: auto;
 
-    .navigation {
+    .sidebar-toggle {
       @include nb-ltr(padding-right, nb-theme(header-padding));
       @include nb-rtl(padding-left, nb-theme(header-padding));
-      font-size: 2.5rem;
-      text-decoration: none;
 
-      i {
-        display: block;
+      nb-icon {
+        width: 2rem;
+        height: 2rem;
       }
+    }
+
+    .logo {
+      padding: 0 1.25rem;
+      font-size: 1.75rem;
+      @include nb-ltr(border-left, 1px solid nb-theme(divider-color));
+      @include nb-rtl(border-right, 1px solid nb-theme(divider-color));
+      white-space: nowrap;
+      text-decoration: none;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .control-item {
+      display: none;
     }
   }
 
   @include media-breakpoint-down(is) {
-    .clock {
+    nb-select {
+      display: none;
+    }
+
+    .user-action {
       display: none;
     }
   }

@@ -20,6 +20,7 @@ import {
   NbSelectModule,
   NbBadgeModule,
   NbCardModule,
+  NbIconModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { SampleLayoutComponent } from './layouts/sample/sample.layout';
@@ -50,6 +51,7 @@ const NB_MODULES = [
   NbSelectModule,
   NbBadgeModule,
   NbCardModule,
+  NbIconModule,
   Ng2SmartTableModule,
 ];
 
